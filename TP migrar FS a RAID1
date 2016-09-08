@@ -1,0 +1,14 @@
+Pre:
+1-Disco con FS
+2- Disco 1 y Disco 2 para hacer RAID1
+
+desarrollo
+
+particionar d1 y d2
+crear fs d11 y d21
+crear md0 y asociar discos d1 d2 a md0
+montar md0
+copiar datos d01 a mdo1
+cambiar punto de montaje en /etc/fstab
+
+
