@@ -2,6 +2,72 @@
 Crear una partición, convertirla en PV, crear un VG y definir un LV lv0 dentro del mismo dejando
 un 25% del espacio libre. Crear un filesystem sobre el LV, montarlo y utilizarlo para administrar
 archivos.
+
+root@fidebian:/tmp# vgcreate vg0 /dev/loop0p1 
+  Volume group "vg0" successfully created
+root@fidebian:/tmp# vgs
+  VG   #PV #LV #SN Attr   VSize VFree
+  vg0    1   0   0 wz--n- 8,00m 8,00m
+root@fidebian:/tmp# pvs
+  PV           VG   Fmt  Attr PSize PFree
+  /dev/loop0p1 vg0  lvm2 a--  8,00m 8,00m
+root@fidebian:/tmp# vgdisplay 
+  --- Volume group ---
+  VG Name               vg0
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               8,00 MiB
+  PE Size               4,00 MiB
+  Total PE              2
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       2 / 8,00 MiB
+  VG UUID               QE6fDV-IfEM-Uene-oqJR-UFVh-H9ml-EZVeKw
+
+
+oot@fidebian:/tmp# vgcreate vg0 /dev/loop0p1 
+  Volume group "vg0" successfully created
+root@fidebian:/tmp# vgs
+  VG   #PV #LV #SN Attr   VSize VFree
+  vg0    1   0   0 wz--n- 8,00m 8,00m
+root@fidebian:/tmp# pvs
+  PV           VG   Fmt  Attr PSize PFree
+  /dev/loop0p1 vg0  lvm2 a--  8,00m 8,00m
+root@fidebian:/tmp# vgdisplay 
+  --- Volume group ---
+  VG Name               vg0
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               8,00 MiB
+  PE Size               4,00 MiB
+  Total PE              2
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       2 / 8,00 MiB
+  VG UUID               QE6fDV-IfEM-Uene-oqJR-UFVh-H9ml-EZVeKw
+
+
+
+
+
 2.
 Definir un nuevo LV lv1 en el mismo VG creado anteriormente, ocupando la totalidad del espacio
 del VG.
